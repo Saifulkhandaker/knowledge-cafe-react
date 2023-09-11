@@ -8,7 +8,7 @@ function App() {
     <>
       <Header></Header>
 
-      <div className="w-4/5 mx-auto md:flex items-center justify-between mt-5">
+      <div className="w-4/5 mx-auto md:flex justify-between mt-5">
         <Blogs></Blogs>
         <Bookmarks></Bookmarks>
       </div>
