@@ -1,7 +1,7 @@
 import { BsBookmarks } from 'react-icons/bs';
 
 const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
-  const { title, cover, author, author_img, posted_date, reading_time,hashtags } = blog;
+  const { id, title, cover, author, author_img, posted_date, reading_time,hashtags } = blog;
 
   return (
     <div className='mt-5 space-y-5'>
@@ -36,7 +36,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
         } */}
       </p>
       <button 
-      onClick={() => handleMarkAsRead(reading_time)}
+      onClick={() => handleMarkAsRead(id, reading_time)}
       className='text-purple-600 font-bold underline mb-32'>Mark As Read</button>
     </div>
   );
