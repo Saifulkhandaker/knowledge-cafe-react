@@ -1,10 +1,10 @@
 import { BsBookmarks } from 'react-icons/bs';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
   const { title, cover, author, author_img, posted_date, reading_time,hashtags } = blog;
 
   return (
-    <div>
+    <div className='mt-5 space-y-5'>
       <img className="w-full" src={cover} alt="" />
 
       <div className="flex items-center justify-between">
@@ -19,11 +19,13 @@ const Blog = ({ blog }) => {
         </div>
         <div className='flex gap-3'>
           <p>{reading_time} min read</p>
-          <button><BsBookmarks></BsBookmarks></button>
+          <button 
+          onClick={() => handleBookmarks(blog)}
+          ><BsBookmarks className='text-red-600'></BsBookmarks></button>
         </div>
       </div>
       <h2 className="text-2xl font-medium mt-5">{title}</h2>
-      <p className="mb-16 font-medium">
+      <p className=" font-medium">
 
       <span><a href="">#{hashtags[0]}</a></span>
       <span className='ml-2'><a href="">#{hashtags[1]}</a></span>
@@ -33,6 +35,9 @@ const Blog = ({ blog }) => {
             hashtags.map(hash => <span><a href="">#{hash}</a></span>)
         } */}
       </p>
+      <button 
+      onClick={() => handleMarkAsRead(reading_time)}
+      className='text-purple-600 font-bold underline mb-32'>Mark As Read</button>
     </div>
   );
 };
